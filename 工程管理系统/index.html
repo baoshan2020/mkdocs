@@ -567,7 +567,7 @@
 <p>select * from Users where ValidDateEnd&lt;GETDATE() and IsLock=0 </p>
 <p>update Users  set IsLock=1 where ValidDateEnd&lt;GETDATE() and IsLock=0 </p>
 <p>select * from Users where ValidDateEnd&gt;GETDATE() and IsLock=0</p>
-<h1 id="_3">审批流程表</h1>
+<h1 id="_3">审批流程表 （配置）</h1>
 <p>ApproveOrder</p>
 <h2 id="_4">审批流程查询</h2>
 <p>select a.AutoID,a.Kind,f.ItemName,a.DutyID,b.DutyName,a.OrderCode,a.IsPermit,a.DeptCode,c.DeptName,a.ProjectStyleCode,a.ExtendKind,a.ApproveExplain,a.SysDateTime
@@ -614,6 +614,19 @@ inner join Region b on a.FatherID=b.RegionCode
 order by a.FatherID,OrgID</p>
 <p>根据部门添加流程</p>
 <p><img alt="1650243337494" src="../img/1650243337494.png" /></p>
+<h2 id="_9">删除审批流程</h2>
+<p>---State=1 审批通过</p>
+<p>update  dbo.PRJ_ApproveInfo set State=1 where  ProjectCode='PBJ200091' and AutoID=21480</p>
+<p>--流程状态</p>
+<p>--CASE WHEN d.ApproveState=1 THEN ''审批通过'' WHEN d.ApproveState=2 THEN ''审批拒绝'' WHEN d.ApproveState=3 THEN ''审批中''  WHEN d.ApproveState=4 THEN ''待审批''  ELSE ''待提交'' END ApproveStateName</p>
+<p>update ProjectEX set ApproveState=1 where  ProjectCode='PBJ200091'</p>
+<h2 id="2022428">2022年4月28日执行</h2>
+<p>--PBJ200093\PBJ200091\PBJ200074\PBJ200073\PBJ200072
+declare @p varchar(100) 
+set  @p='PBJ200072'
+select * from dbo.PRJ_ApproveInfo where  ProjectCode=@p  and State=3</p>
+<p>update  dbo.PRJ_ApproveInfo set State=1 where  ProjectCode=@p and State=3
+update ProjectEX set ApproveState=1 where  ProjectCode=@p</p>
 
               
             </article>
@@ -652,6 +665,8 @@ order by a.FatherID,OrgID</p>
     
     
       <script src="../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+        <script src="../js/baidu.js"></script>
       
     
   </body>

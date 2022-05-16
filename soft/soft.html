@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="soft.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .a {
+            text-align: center;
+        }
+    </style>
+    <script>
+ function jz()
+{
+//yincang();
+//因为要判定名称,获取用户名称需要第一个执行
+text1.value=sys_getUserName();
+
+
+
+//adminButton();
+
+jindutiao();
+//setTimeout("cx()",1000);   
+
+//qurry();
+
+
+//隐藏或显示管理员查询按钮
+
+
+
+
+//lsBiao();
+jiazaiCx();
+//setTimeout("cx()",1000);  
+
+
+
+
+$('#text2').attr('autocomplete', 'off');
+ 
+$('#hdata').attr('autocomplete', 'off'); 
+//设置hdata  autocomplete off 不会出现提示信息 
+
+$('#hdata').datetimepicker({
+timepicker:false,
+format:'Y-m-d',
+});
+$.datetimepicker.setLocale('zh');
+
+
+
+}
+
+
+function jiazaiCx(){
+
+var  username= '"+text1.value+"';
+
+var faqirensql="select tongbu from 华业合同通知view where faqiren="+"'"+username+"'";
+var faqiren=SqlToField(faqirensql);
+//华业查询
+if(faqiren==0){ setTimeout("cxhy()",1000); }
+
+else{ setTimeout("cx()",1000);  }
+
+}
+
+
+
+
+
+
+
+
+         function fresh(){            
+ // 框架内页面刷新：可实现局部刷新与整个页面重定向
+             self.location.reload();  //刷新框架内页面
+            // window.parent.location.href='http://koushuling.top'; //页面重定向 
+       }
+
+
+
+
+function GetFrom()
+{
+//var MainID=dataset1.Fields.Field['MainID'].Value;
+var sqlupdate = "update tusenergy129mainid set mainid= '"+dataset1.Fields.Field['MainID'].Value+"' where id=2 "
+//alert (sqlupdate);
+ InsertSql(sqlupdate); 
+
+
+//mychuanzhi.minid="mainid";
+var URL="../../fceform/common/djframe.htm?djsn=1002htcxdc_54bcd0f5-0e2c-498b-b963-c76fc75865d7&djtype=TT&DjName=1002合同查询弹窗";
+//window.showModalDialog (URL,str,'DialogLeft:170px;DialogTop:130px;DialogWidth:700px;DialogHeight:500px;status:no;help:no');
+    openModalDialog(URL,window,{width:1100,height:1800}, null,[]);
+}
+
+function ShowDetails()
+{
+	var index = grid1.Row;
+	var mainid =  DsMain.Fields.Field['MainID'].Value;
+	if(mainid == "")
+	{
+	   return;
+	}
+	var appid = "";
+	var apptid = "";
+	var URL = "";
+          var sql = "select top 1 app_id,appt_id from jhoa_approve where appo_values = '"+ mainid +"' order by app_id desc";
+	var xmlResult = SelectSql(sql,1,-1);
+	oXml = 	SetDom(xmlResult);
+	if (NavJs.xml(oXml.documentElement) !="<root></root>")
+	{
+		appid = NavJs.textContent(oXml.documentElement.childNodes[0].childNodes[0]);
+		apptid = NavJs.textContent(oXml.documentElement.childNodes[0].childNodes[1]);
+	}
+var URL="../../fceform/common/djframe.htm?djsn=1002htcxdc_54bcd0f5-0e2c-498b-b963-c76fc75865d7&djtype=TT&DjName=1002合同查询弹窗";
+	URL+= "&opentype=2&ModuleID=0001_9b59019e-b277-445f-9560-e8d5b066e049&IsNew=1&OperatorTypeWFHsh=FS&httpAppID="+appid+"&httpOID=0&paravalue="+mainid+"&_FlowTemplateID="+apptid +"&opensource=travelexpense";
+	openModalDialog(URL,window,{width:1200,height:760}, null,[]);
+}
+
+
+//华业查询
+function cxhy()
+{
+  var sql = "select top 20 * from hetongchaxunbiao where 1=1  "
+
+ if(text1.value != ""){
+     sql += " and username= '"+text1.value+"' order by App_Time desc   ";
+    }
+
+if(text1.value != ""){
+   sql += "and  mainid in (select  MainID  from tusenergy129zibiao  where shifouguidang='否')";
+}
+           dataset1.PageSize=20;
+           dataset1.Open(sql); 
+           document.getElementById("txtPageNo").value = dataset1.PageNo;
+	document.getElementById("txtPageNum").value = dataset1.PageCount;
+	document.getElementById("txtRecordNum").value = dataset1.RecordCountAll;
+	ChangeState();
+	if(dataset1.RecordCountAll == "0")
+	{
+		openAlertDialog("没有明细记录存在！");
+	}
+alert(sql);
+}
+
+
+
+
+//清能其他查询
+function cx()
+{
+  var sql = "select top 20 * from hetongchaxunbiao where 1=1  "
+
+ if(text1.value != ""){
+     sql += " and username= '"+text1.value+"' order by App_Time desc   ";
+    }
+
+           dataset1.PageSize=20;
+           dataset1.Open(sql); 
+           document.getElementById("txtPageNo").value = dataset1.PageNo;
+	document.getElementById("txtPageNum").value = dataset1.PageCount;
+	document.getElementById("txtRecordNum").value = dataset1.RecordCountAll;
+	ChangeState();
+	if(dataset1.RecordCountAll == "0")
+	{
+		openAlertDialog("没有明细记录存在！");
+	}
+//alert(sql);
+}
+
+
+
+
+
+function qurry()
+{
+  var sql = "select * from hetongchaxunbiao  where 1=1 "
+//模糊搜索2
+
+ if(text1.value != ""){
+     sql += " and username= '"+text1.value+"'  ";
+    }
+ if(hdata.value != ""){
+sql += " and App_Time> '"+hdata.value+"'"}
+   if(text1.value != "" && text2.value != "" )
+    {
+     sql += " and concat(color,hetongleibie,板块,mainid,hetongleibie3,htjbnr,AppO_Title,App_Time,secretary,印章,secretary,username)  like '%"+text2.value+"%' ";
+    }
+
+//添加授权查询
+
+ if(text1.value != ""){
+     sql += "  Union all select * from hetongchaxunbiao  where ( username in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) or hetongleibie in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) ) ";
+    }
+
+//授权查询过滤
+
+   if(text1.value != "" && text2.value != "" )
+    {
+     sql += " and concat(color,hetongleibie,板块,mainid,hetongleibie3,htjbnr,AppO_Title,App_Time,secretary,印章,secretary,username)  like '%"+text2.value+"%' ";
+    }
+//排序
+
+ if(text1.value != ""){
+     sql += " order by App_Time desc  ";
+    }
+alert(sql);
+
+           dataset1.PageSize=50;
+           dataset1.Open(sql); 
+           document.getElementById("txtPageNo").value = dataset1.PageNo;
+	document.getElementById("txtPageNum").value = dataset1.PageCount;
+	document.getElementById("txtRecordNum").value = dataset1.RecordCountAll;
+	ChangeState();
+	if(dataset1.RecordCountAll == "0")
+	{
+		openAlertDialog("没有明细记录存在！");
+	}
+
+
+}
+
+
+
+
+
+function qurryAdmin()
+{   
+  var sql = "select * from hetongchaxunbiao  where 1=1 "
+
+ if(hdata.value != ""){
+sql += " and App_Time> '"+hdata.value+"'"}
+
+
+//模糊搜索2
+  if(text1.value != "" && text2.value != "" )
+    {
+     sql += " and concat(color,hetongleibie,板块,mainid,hetongleibie3,htjbnr,AppO_Title,App_Time,secretary,印章,secretary,username)  like '%"+text2.value+"%'  ";
+    }
+
+//超级管理员
+if(text1.value=="马保山" ){} else {
+//印章董秘管理
+sql += " and hetongleibie  in  (select name from gongsiweihu2020 where secretary='"+text1.value+"') ";
+}
+
+
+
+
+if(text1.value != ""){
+sql += " order by App_Time desc "; }
+
+
+
+//alert(sql);
+
+           dataset1.PageSize=50;
+           dataset1.Open(sql); 
+           document.getElementById("txtPageNo").value = dataset1.PageNo;
+	document.getElementById("txtPageNum").value = dataset1.PageCount;
+	document.getElementById("txtRecordNum").value = dataset1.RecordCountAll;
+	ChangeState();
+	if(dataset1.RecordCountAll == "0")
+	{
+		openAlertDialog("没有明细记录存在！");
+	}
+
+}
+
+
+
+
+
+
+
+
+function movepage(ipos,obj)
+{ 
+	if(ipos==1)
+	{ 
+		dataset1.FirstPage(); 
+	}
+	else if(ipos==2)
+	{ 
+		dataset1.PrevPage(); 
+	}
+	else if(ipos==3)
+	{ 
+	  	dataset1.NextPage(); 
+	}
+	else if(ipos==4)
+	{ 
+	  	dataset1.LastPage(); 
+	} 	
+	document.getElementById("txtPageNo").value = dataset1.PageNo;	
+	ChangeState();
+}
+
+function ChangeImgStatus(id,flag)
+{
+	var obj = document.getElementById(id);
+	obj.disabled = flag; //仅IE支持
+	if(flag)
+	{
+		obj.style.filter = "alpha(opacity=20)"; //IE支持
+		obj.style.opacity = "0.2"; //其它浏览器支持
+	}
+	else
+	{
+		obj.style.filter = "alpha(opacity=100)";
+		obj.style.opacity = "1";
+	}	
+}
+
+function ChangeState()
+{
+	var PageNo = document.getElementById("txtPageNo");
+	var PageNum = document.getElementById("txtPageNum");
+	var ImgNext = document.getElementById("imgNext");
+	var ImgLast = document.getElementById("imgLast");
+	var ImgFirst = document.getElementById("imgFirst");
+	var ImgPre = document.getElementById("imgPre");
+	if((PageNo.value == "1" || PageNo.value == "0" || PageNo.value == "") && (PageNum.value == "1" || PageNum.value == "0" || PageNum.value == ""))
+	{
+		ChangeImgStatus("imgNext",true);
+		ChangeImgStatus("imgLast",true);
+		ChangeImgStatus("imgFirst",true);
+		ChangeImgStatus("imgPre",true);
+	}
+	else
+	{
+		if(PageNo.value == PageNum.value)
+		{
+			ChangeImgStatus("imgNext",true);
+			ChangeImgStatus("imgLast",true);
+			ChangeImgStatus("imgFirst",false);
+			ChangeImgStatus("imgPre",false);
+		}
+		else if(PageNo.value == "1")
+		{
+			ChangeImgStatus("imgNext",false);
+			ChangeImgStatus("imgLast",false);
+			ChangeImgStatus("imgFirst",true);
+			ChangeImgStatus("imgPre",true);
+		}
+		else
+		{
+			ChangeImgStatus("imgNext",false);
+			ChangeImgStatus("imgLast",false);
+			ChangeImgStatus("imgFirst",false);
+			ChangeImgStatus("imgPre",false);
+		}		
+	}
+}
+
+function buttonSwitch(){
+//切换button4 按钮的名字 ，并执行更多 和隐藏 函数
+
+var button=$("#button4").text();
+
+if(button=="高级"){
+$("#button4").text('简单');
+gengduo();
+
+}
+else{
+$("#button4").text('高级');
+yincang();
+}
+
+}
+
+
+function  yincang()
+{
+
+//隐藏用style.display="none"，不隐藏用style.display="block"
+
+document.getElementById("yc1").style.display = "none";
+document.getElementById("yc2").style.display = "none";
+document.getElementById("yc3").style.display = "none";
+}
+
+function gengduo()
+{
+
+//隐藏用style.display="none"，不隐藏用style.display="block"
+
+document.getElementById("yc1").style.display = "";
+
+document.getElementById("yc2").style.display = "";
+document.getElementById("yc3").style.display = "";
+}
+
+
+function adminButton(){
+//判定text 2 是否是董秘， 如果是董秘，显示管理员查询，如果不是董秘隐藏高级查询
+// jq写法
+var text=text1.value;
+sql="select secretary from gongsiweihu2020 where secretary = '"+text1.value+"'";
+var name=SqlToField(sql);
+//text4.value=name;
+if(text==name){
+
+document.getElementById("button5").style.display = "inline";
+document.getElementById("button7").style.display = "none";
+}
+else{document.getElementById("button5").style.display = "none";
+document.getElementById("button7").style.display = "inline";
+}
+}
+
+
+function queryall(){
+  dataset1.Open(sql);
+
+}
+function exportToExcel(ds, grid, func) {
+	/****
+	说明:将grid的数据导出到excel中,支持全部和部分。
+	参数:ds,需要导出的grid对应的dataset,对象型
+	grid,需要导出数据的grid
+	func,执行的查询方法.针对分页需要导出全部的情况,因为如果导出全部的话,需要重新查询用来设置每页记录数
+	调用示例:exportToExcel(dataset1, grid1, 'queryKehu()');
+	完善:周平
+	完善说明:主要增加参数,使整个导出方法不需要修改函数实现,只需要传递参数便可
+	更新:2014-12-16
+	 ****/
+	if (ds.RecordCountAll < 1) {
+		//openAlertDialog("没有可导出的记录，请先统计！");
+	} else {
+		var isAll = 0;
+		if (confirm("[确定]则导出当前页.\n[取消]")) {
+			sys_exportdata(grid.tab.outerHTML, "xls");
+	
+			}
+}
+}
+
+
+
+ function jindutiao() {
+            // 设定当前起始状态值,
+            // 真实情况中用html5的onprogress和onload来完成
+            // 还可以跟后台配合，通过ajax实时的返回数据
+            var iNow = 0;
+            // 设定定时器
+            var timer = setInterval(function () {
+                // 如果当前的值为100
+                if (iNow == 100) {
+                    // 清除定时器
+                    clearInterval(timer);
+                }else {
+                    // 将当前状态值累加1
+                    iNow += 1;
+                    // 调用执行状态的函数,传入状态值
+                    progressFn(iNow);
+                }
+
+ 
+            }, 1);
+ 
+ 
+            function progressFn(cent) {
+                // 获取最外层的div
+                var oDiv1 = document.getElementById('progressBox');
+                // 获取内层进度条的div
+                var oDiv2 = document.getElementById('progressBar');
+                // 获取内层文字发生变化时的div
+                var oDiv3 = document.getElementById('progressText');
+ 
+                // 获取总进度条的宽度
+                var allWidth = parseInt(getStyle(oDiv1, 'width'));
+ 
+                // 设定内层两个div的文字内容一样
+                oDiv2.innerHTML = cent + '%';
+                oDiv3.innerHTML = cent + '%';
+ 
+                // 修改clip的的宽度值
+                oDiv2.style.clip = 'rect(0px, ' + cent / 100 * allWidth + 'px, 40px, 0px)';
+ 
+                // 获取当前元素的属性值
+                function getStyle(obj, attr) {
+                    // 兼容IE
+                    if (obj.currentStyle) {
+                        return obj.currentStyle[attr];
+                    }else {
+                        // 第二个参数为false是通用的写法，目的是为了兼容老版本
+                        return getComputedStyle(obj, false)[attr];
+                    }
+                }
+            }
+
+};
+
+function lsBiao(){
+
+	//菜单_考勤授权
+	sql = " exec hetongchaxunls";
+//alert(sql);
+                 InsertSql(sql);
+
+
+
+}
+
+function inputColor(){
+document.getElementById('search').className="inputlan";
+//document.getElementById('text2').style.border='1px solid #4e6ef2';
+}
+
+
+function newcx(){
+
+var sqlSecretary='';
+var sqlShouquan='';
+var sqlAdmin='';
+
+//董秘查询
+var text=text1.value;
+sqldongmi="select secretary from gongsiweihu2020 where secretary = '"+text1.value+"'";
+var name=SqlToField(sqldongmi);
+//text4.value=name;
+if(text==name){
+sqlSecretary="select * from hetongchaxunbiao  where  hetongleibie  in  (select name from gongsiweihu2020 where secretary='"+text1.value+"') ";
+}
+//添加授权查询
+sql23="select name from hetongchaxunshouquan  where name= '"+text1.value+"'";
+var shouquan=SqlToField(sql23);
+if(text==shouquan){
+sqlShouquan="select * from hetongchaxunbiao  where username in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) or hetongleibie in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) ";
+}
+
+//超级管理员
+if(text1.value=="马保山" ){
+    sqlAdmin='select * from hetongchaxunbiao' ;
+}
+
+
+//查询语句
+
+var sql = "select * from  (select * from hetongchaxunbiao where username= '"+text1.value+"'";
+
+//超级管理员和授权管理员区分
+if (sqlAdmin!=''){ sql+=" " +"Union all"+" "+sqlAdmin; }
+
+
+else{
+
+if (sqlSecretary!=''){ sql+=" "+"Union all"+" "+sqlSecretary; }
+if (sqlShouquan!=''){ sql+=" "+"Union all"+" "+sqlShouquan; }
+}
+
+sql +=') a where 1=1';
+
+
+
+//授权查询过滤
+
+if(text1.value != "" && text2.value != "" )
+    {
+     sql += " and concat(color,hetongleibie,板块,mainid,hetongleibie3,htjbnr,AppO_Title,App_Time,secretary,印章,secretary,username)  like '%"+text2.value+"%' ";
+    }
+
+
+//时间过滤
+if(hdata.value != ""){
+sql += " and App_Time> '"+hdata.value+"'"}
+
+//排序
+     sql += " order by App_Time desc  ";
+
+//alert(sql);
+           dataset1.PageSize=50;
+           dataset1.Open(sql); 
+           document.getElementById("txtPageNo").value = dataset1.PageNo;
+	document.getElementById("txtPageNum").value = dataset1.PageCount;
+	document.getElementById("txtRecordNum").value = dataset1.RecordCountAll;
+	ChangeState();
+	if(dataset1.RecordCountAll == "0")
+	{
+		openAlertDialog("没有明细记录存在！");
+	}
+
+}
+
+
+    </script>
+</body>
+
+</html>
