@@ -1,0 +1,48 @@
+ <!-- style="float: right;" -->
+                <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                </a> </div> 
+                 <!-- style="float: right;" -->
+                 <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                </a> </div> 
+                 <!-- style="float: right;" -->
+                 <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                </a> </div> 
+                    <!-- style="float: right;" -->
+                    <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                    </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                    </a> </div> 
+                     <!-- style="float: right;" -->
+                     <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                    </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                    </a> </div> 
+                     <!-- style="float: right;" -->
+                     <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                    </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                    </a> </div> 
+                        <!-- style="float: right;" -->
+                <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                </a> </div> 
+                 <!-- style="float: right;" -->
+                 <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                </a> </div> 
+                 <!-- style="float: right;" -->
+                 <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                </a> </div> 
+                    <!-- style="float: right;" -->
+                    <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                    </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                    </a> </div> 
+                     <!-- style="float: right;" -->
+                     <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                    </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                    </a> </div> 
+                     <!-- style="float: right;" -->
+                     <div   class='content-wz' list=1><a href=https://cloud.tusenergy.com/k3cloud> <div class=ico style="background-image:url(./img/sougou.png)">
+                    </div><div class="tail"><p>金蝶社区</p><p> http://it.tusenergy.com</p></div>
+                    </a> </div> 

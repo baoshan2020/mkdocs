@@ -1,0 +1,242 @@
+{
+    "连接": [{
+            "name": "企业微信",
+            "URL": "https://work.weixin.qq.com",
+            "text": "22",
+            "ico": ""
+        },
+        {
+            "name": "k3cloud",
+            "URL": "https://cloud.tusenergy.com/k3cloud",
+            "text": "111",
+            "ico": "k3cloud.ico"
+        },
+        {
+            "name": "oa",
+            "URL": "http://oa.tusenergy.com",
+            "text": "111",
+            "ico": "oa.ico"
+        },
+        {
+            "name": "邮箱",
+            "URL": "http://mail.tusenergy.com",
+            "text": "111",
+            "ico": "263.png"
+        },
+        {
+            "name": "IT",
+            "URL": "http://it.tusenergy.com",
+            "text": "mkdocs",
+            "ico": ""
+        }
+        ,
+        {
+            "name": "清能DE",
+            "URL": "http://de.tusenergy.com",
+            "text": "dataease",
+            "ico": ""
+        }
+        ,
+        {
+            "name": "清能jumperS",
+            "URL": "http://r.tusenergy.com",
+            "text": "jumperserver",
+            "ico": ""
+        }
+
+
+    ],
+    "常用": [{
+            "name": "金蝶补丁",
+            "URL": "https://open.kingdee.com/K3Cloud/Open/home",
+            "text": "22",
+            "ico": "DeskClient.ico"
+        }, {
+            "name": "金蝶社区",
+            "URL": "https://vip.kingdee.com",
+            "text": "111",
+            "ico": "DeskClient.ico"
+        }, {
+            "name": "金蝶云平台",
+            "URL": "https://cloud.kingdee.com/pt",
+            "text": "111",
+            "ico": "DeskClient.ico"
+        }, {
+            "name": "oa补丁",
+            "URL": "ftp://download.jinher.com",
+            "text": "111",
+            "ico": "oa.ico"
+        }, {
+            "name": "oa客户端",
+            "URL": "http://apm.iuoooo.com/AppAssembly/Search?searchKey=c6&majorType=null",
+            "text": "111",
+            "ico": "oa.ico"
+        }, {
+            "name": "263帮助",
+            "URL": "https://www.263.net/263/helpcenter/client/",
+            "text": "111",
+            "ico": ""
+        }, {
+            "name": "c6调试",
+            "URL": "http://oa.tusenergy.com/c6/oaplus/view/login/signIn.html?appServer=c6",
+            "text": "111",
+            "ico": ""
+        }
+
+    ],
+    "github": [
+        
+        {
+            "name": "githubs",
+            "URL": "https://www.githubs.cn",
+            "text": "中文github",
+            "ico": ""
+        },
+        {
+            "name": "hugo",
+            "URL": "https://github.com/gohugoio/hugo/releases",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "PowerToys",
+            "URL": "https://github.com/microsoft/PowerToys/releases",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "winget",
+            "URL": "https://github.com/microsoft/winget-cli/releases",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "o2oa",
+            "URL": "http://www.o2oa.net/",
+            "text": "免费oa",
+            "ico": ""
+        },
+        {
+            "name": "微软帮助",
+            "URL": "https://docs.microsoft.com/zh-cn/windows/package-manager/winget/",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "hwinfo 电脑检测软件",
+            "URL": "http://www.hwinfo.com",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "堡垒机",
+            "URL": "https://github.com/jumpserver/jumpserver/tags",
+            "text": "jumpserver",
+            "ico": ""
+        },
+        {
+            "name": "BI分析",
+            "URL": "https://github.com/dataease/dataease/tags",
+            "text": "dataease",
+            "ico": ""
+        },
+        {
+            "name": "flash",
+            "URL": "https://ruffle.rs",
+            "text": "谷歌88以后的",
+            "ico": ""
+        },
+        {
+            "name": "HEU KMS",
+            "URL": "https://github.com/zbezj/HEU_KMS_Activator/releases",
+            "text": "office 激活",
+            "ico": ""
+        }
+
+
+
+
+    ],
+    "网络": [{
+            "name": "网络安全",
+            "URL": "http://www.gjwlaqxcz.cn/",
+            "text": "学习",
+            "ico": ""
+        },
+        {
+            "name": "zabbix论坛",
+            "URL": "https://www.zabbix.com/forum/in-chinese",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "导航链接",
+            "URL": "",
+            "text": "参考",
+            "ico": ""
+        },
+        {
+            "name": "proxmox",
+            "URL": "https://www.proxmox.com/",
+            "text": "开源的虚拟机",
+            "ico": ""
+        }
+
+
+    ],
+    "政府": [{
+            "name": "积分落户",
+            "URL": "http://rsj.beijing.gov.cn/ywsite/jflh/",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "公积金",
+            "URL": "http://gjj.beijing.gov.cn",
+            "text": "111",
+            "ico": ""
+        },
+        {
+            "name": "汽车摇号",
+            "URL": "https://www.bjhjyd.gov.cn/",
+            "text": "111",
+            "ico": ""
+        }
+
+
+    ],
+    "苹果": [{
+            "name": "xclient",
+            "URL": "https://xclient.info/",
+            "text": "mac苹果软件下",
+            "ico": ""
+        }
+
+
+    ],
+    "logo": [{
+            "name": "品牌logo",
+            "URL": "http://www.visiocafe.com/",
+            "text": "111",
+            "ico": ""
+        }
+
+
+    ],
+    "游戏": [{
+            "name": "yuzu",
+            "URL": "https://yuzu-emu.org/downloads/",
+            "text": "游戏",
+            "ico": ""
+        }, {
+            "name": "yuzu下载",
+            "URL": "https://github.com/yuzu-emu/yuzu-mainline/releases",
+            "text": "github网址",
+            "ico": ""
+        }
+
+    ]
+
+
+
+}

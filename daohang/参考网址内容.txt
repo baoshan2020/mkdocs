@@ -1,0 +1,26 @@
+<li class="_2u8G_" data-posid="0" style="left: 0px; top: 0px;">
+                                <div class="_1XkwY _1XjJv _2uMEd" data-type="grid-wrap" data-index="0" data-action="mini-grid-jump" title="网址大全">
+  <a href="https://123.sogou.com/" data-action="mini-grid-no-jump" class="_2VmFJ
+  " data-type="grid-item" data-title="网址大全">
+    <div class="_1yLWG" data-type="content" style="color: #fff;
+          background-color: #fff; background-image: url(static/images/preset/id1_mini.png?t=1651232436117)"></div>
+    <div class="_2B5oH _2uMEd">网址大全</div>
+        <div class="_3HIme _2uMEd">
+          <span class="_p0Shd" data-index="0" data-action="mini-grid-del">删除</span>
+          <span class="_p0Shd" data-index="0" data-action="mini-grid-modify">修改</span>
+        </div>
+      
+
+  </a>
+</div>
+                            </li>
+
+
+
+
+<a class="app-item" href="#/detail/aHB2eXFLTGhVUWY4YjZUamJwb2ZRUT09">
+<div class="app-item-icon " data-background="https://dlie.sogoucdn.com/sext/center/1b/64/90ea64c2996793518042bf2c6e4b.png" style="background-image: url(&quot;https://dlie.sogoucdn.com/sext/center/1b/64/90ea64c2996793518042bf2c6e4b.png&quot;);"></div>
+<div class="app-item-r">
+<p class="app-item-title">Paint Tool</p>
+<div class="app-item-rm">
+<div class="app-item-rank"><div class="rank-star-container"><div class="star totalstar false" data-id="1" style="background-size: 87.5% 100%;"></div><div class="star totalstar false" data-id="2" style="background-size: 87.5% 100%;"></div><div class="star totalstar false" data-id="3" style="background-size: 87.5% 100%;"></div><div class="star totalstar false" data-id="4" style="background-size: 87.5% 100%;"></div><div class="star totalstar false" data-id="5" style="background-size: 87.5% 100%;"></div></div></div><button class="app-item-install">添加</button></div><p class="app-item-descrp">绘制形状，线条，向实时网页添加文本，屏幕截图。</p></div></a>

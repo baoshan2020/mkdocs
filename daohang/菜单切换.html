@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>jquery实现tab菜单切换内容（精简版）</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+      <!-- 这是菜单 -->
+     <div>
+         <span style="background-color: red;cursor: pointer;" list="0" onclick="tab(this)" >我是A</span>
+          <span style="background-color: blue;cursor: pointer;" list="1" onclick="tab(this)" >我是B</span>
+          <span style="background-color: orange;cursor: pointer;" list="2" onclick="tab(this)" >我是C</span>
+          <span style="background-color: green;cursor: pointer;" list="3" onclick="tab(this)" >我是D</span>
+    </div>
+    <!-- 这是菜单对应的内容 -->
+    <div class="content">
+        <div style="background-color: red" onclick="cont(this)">我是A的内容</div>      
+          <div style="background-color: blue;display: none"   onclick="cont(this)" >我是B的内容</div>   
+         <div style="background-color: orange;display: none" onclick="cont(this)" >我是C的内容</div>  
+          <div style="background-color: green;display: none"  onclick="cont(this)" >我是D的内容</div>
+   </div>
+
+ </body>
+ </html>
+ <script type="text/javascript">
+
+     //点击菜单执行函数
+     function tab(param) {
+       console.log(param);
+         var sp_an=$(param).attr('list');//获取被点击菜单的list属性值（0,1,2,3）
+         $('.content').children('div').eq(sp_an).click();//点击菜单后，对应的内容被点击，从而实现展示
+        //使用click()方法模拟点击事件，触发下面的cont函数
+       }
+ 
+     //这个函数的触发是通过点击菜单的时候触发的
+     function cont(param){
+         $(param).show();//被选中的内容显示
+         $(param).siblings().hide();//没有被选中的内容隐藏
+     }
+ 
+ </script>

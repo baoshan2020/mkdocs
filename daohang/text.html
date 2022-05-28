@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+var sqlSecretary='';
+var sqlShouquan='';
+var sqlAdmin='';
+
+//董秘查询
+var text=text1.value;
+sqldongmi="select secretary from gongsiweihu2020 where secretary = '"+text1.value+"'";
+var name=SqlToField(sqldongmi);
+//text4.value=name;
+if(text==name){
+sqlSecretary='select * from hetongchaxunbiao  where  hetongleibie  in  (select name from gongsiweihu2020 where secretary='"+text1.value+"') "';  
+}
+//添加授权查询
+sql23="select name from hetongchaxunshouquan  where secretary = '"+text1.value+"'";
+var shouquan=SqlToField(sql23);
+if(text==shouquan){
+sqlShouquan='select * from hetongchaxunbiao  where username in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) or hetongleibie in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) ';
+}
+
+//超级管理员
+if(text1.value=="马保山" ){
+    sqlAdmin='select * from hetongchaxunbiao' 
+}
+
+
+//查询语句
+
+var sql = "select * from  (select * from hetongchaxunbiao";
+if (sqlSecretary!=''){ sql+='Union all'+sqlSecretary; }
+if (sqlShouquan=''){ sql+='Union all'+sqlShouquan; }
+if (sqlAdmin=''){ sql+='Union all'+sqlShouquan  ; }
+
+sql +=') a where 1=1';
+
+
+
+//授权查询过滤
+
+if(text1.value != "" && text2.value != "" )
+    {
+     sql += " and a.concat(color,hetongleibie,板块,mainid,hetongleibie3,htjbnr,AppO_Title,App_Time,secretary,印章,secretary,username)  like '%"+text2.value+"%' ";
+    }
+
+
+//时间过滤
+if(hdata.value != ""){
+sql += " and App_Time> '"+hdata.value+"'"}
+
+//排序
+ if(text1.value != ""){
+     sql += " order by App_Time desc  ";
+    }
+alert(sql);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//添加授权查询
+
+if(text1.value != ""){
+     sql += "  Union all select * from hetongchaxunbiao  where ( username in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) or hetongleibie in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) ) ";
+    }
+
+
+    //超级管理员
+if(text1.value=="马保山" ){} else {
+//印章董秘管理
+sql += " and hetongleibie  in  (select name from gongsiweihu2020 where secretary='"+text1.value+"') ";
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var sql = "select * from hetongchaxunbiao  where 1=1 "
+//模糊搜索2
+
+ if(text1.value != ""){
+     sql += " and username= '"+text1.value+"'  ";
+    }
+ if(hdata.value != ""){
+sql += " and App_Time> '"+hdata.value+"'"}
+   if(text1.value != "" && text2.value != "" )
+    {
+     sql += " and concat(color,hetongleibie,板块,mainid,hetongleibie3,htjbnr,AppO_Title,App_Time,secretary,印章,secretary,username)  like '%"+text2.value+"%' ";
+    }
+
+
+select * from 
+
+//添加授权查询
+
+ if(text1.value != ""){
+     sql += "  Union all select * from hetongchaxunbiao  where ( username in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) or hetongleibie in (select name_shouquan from hetongchaxunshouquan  where name='"+text1.value+"' ) ) ";
+    }
+
+//授权查询过滤
+
+   if(text1.value != "" && text2.value != "" )
+    {
+     sql += " and concat(color,hetongleibie,板块,mainid,hetongleibie3,htjbnr,AppO_Title,App_Time,secretary,印章,secretary,username)  like '%"+text2.value+"%' ";
+    }
+
+//时间过滤
+    if(hdata.value != ""){
+sql += " and App_Time> '"+hdata.value+"'"}
+
+//排序
+
+ if(text1.value != ""){
+     sql += " order by App_Time desc  ";
+    }
+
+alert(sql);
+
+
+    </script>
+</body>
+</html>

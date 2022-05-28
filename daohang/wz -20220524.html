@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./wz.css">
+    <scritp src="./jquery-3.6.0.js"></scritp>
+    <script src="./ma.js"></script>
+    <script src="./wz.js"></script>
+
+</head>
+
+<body>
+<script>
+
+    /*
+
+    window.onload= function dataJson()  {
+    var url = "data.json"
+    
+    var request = new XMLHttpRequest();
+    
+    request.open("get", url);
+    
+    request.send(null);
+    
+    request.onload = function () {
+    
+        if (request.status == 200) {
+    
+            var json = JSON.parse(request.responseText);
+    
+
+            console.log(json);
+            // var obj = eval("("+json+")");
+            var obj= json.parse (json);
+    var gs=obj.gs;
+    
+    var content=document.getElementById('content');
+    content.innerHTML=gs;
+            // var ol = document.getElementById('ol');
+    
+            // json.person.map(person => {
+    
+            //     var li = document.createElement("li");
+    
+            //     li.innerHTML = `名字是 ${person.name} 图片是 ${person.image}`;
+    
+            //     ol.append(li);
+    
+            // })
+    
+        }
+    
+    }
+    
+    }
+    */
+
+</script>
+<table>
+    <!-- <div class="main"> -->
+    <tr ><td rowspan="2">
+        <div class="main-left">
+            <div class="main-left-tail">网页导航</div>
+             <!-- <ul>
+              <li>软件</li>
+                <li>软件2</li> 
+            </ul>  -->
+        </div>
+    </td>
+<td>
+    <div class="seach">
+        <div>
+            <form action="http://www.baidu.com/baidu" target="_blank">
+                <div align="center">
+                    <input name=tn type=hidden value=baidu>
+                    <a href="http://www.baidu.com/"><img
+                            src="http://img.baidu.com/search/img/baidulogo_clarity_80_29.gif" alt="Baidu" align="bottom" border="0"></a>
+                    <input type=text name=word size=30>
+                    <input type="submit" value="搜索">
+                </div>
+        </div>
+    </div>
+
+</td>
+</tr>
+    <tr> <td>
+        <div class="main-content">
+           
+            <div id="content">
+       
+                     <!-- <button onclick="loadDoc()"> 1213</button> -->
+            </div>
+
+        </div>
+    </td></tr>
+    <!-- </div> -->
+</table>
+    <!-- 
+    <div class="card-body">
+        <div class="url-content d-flex align-items-center">
+            <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center"> <i
+                    class="iconfont icon-add"></i></div>
+            <div class="url-info flex-fill" style="padding-top: 2px">
+                <div class="text-sm overflowClip_1"> <strong>登录添加</strong> </div>
+            </div>
+        </div>
+    </div>
+    <a href="www.baidu.com">百度</a> -->
+
+
+  
+
+
+</body>
+
+</html>
