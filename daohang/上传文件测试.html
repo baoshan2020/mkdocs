@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="file" id="file-uploader"> -->
+    
+    <!-- <div id="container">
+        <h1>Drag & Drop an Image</h1>
+        <div id="drop-zone">
+          DROP HERE
+        </div>
+      
+        <div id="content">
+          Your image to appear here..
+        </div>
+      </div> -->
+
+
+      <!-- <div>
+        <h1>单个文件上传</h1>
+        <input type="file" id="file-uploader">
+        <p>上传文件，并在浏览器控制台中查看输出。</p>
+        <p id="feedback"></p>
+      </div> -->
+      
+      <input type="file" id="fileUpload" />
+<script>
+// const fileUploader = document.getElementById('file-uploader');
+// fileUploader.addEventListener('change', (event) => {
+//   const files = event.target.files;
+//   console.log('files', files);
+// });
+
+
+
+
+
+// const fileUploader = document.getElementById('file-uploader');
+
+// fileUploader.addEventListener('change', (event) => {
+//   const files = event.target.files;
+//   console.log('files', files);
+  
+//   const feedback = document.getElementById('feedback');
+//   const msg = `File ${files[0].name} uploaded successfully!`;
+//   feedback.innerHTML = msg;
+// });
+
+
+
+const handleImageUpload = event => {
+  const files = event.target.files
+  const formData = new FormData()
+  formData.append('myFile', files[0])
+
+  fetch('./', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.path)
+  })
+  .catch(error => {
+    console.error(error)
+  })
+}
+
+document.querySelector('#fileUpload').addEventListener('change', event => {
+  handleImageUpload(event)
+})
+</script>
+</body>
+</html>

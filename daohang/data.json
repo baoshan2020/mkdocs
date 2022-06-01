@@ -1,4 +1,7 @@
 {
+    "排行榜":[
+
+    ],
     "连接": [{
             "name": "企业微信",
             "URL": "https://work.weixin.qq.com",
@@ -46,6 +49,8 @@
 
 
     ],
+
+    
     "常用": [{
             "name": "金蝶补丁",
             "URL": "https://open.kingdee.com/K3Cloud/Open/home",
@@ -223,6 +228,51 @@
 
 
     ],
+        "网站": [
+            
+            {
+                "name": "node学习",
+                "URL": " http://nodejs.cn/",
+                "text": "web学习 node中文资源",
+                "ico": ""
+            },
+            
+            {
+                "name": "node社区",
+                "URL": " https://cnodejs.org/",
+                "text": "web学习 node社区",
+                "ico": ""
+            },
+            {
+            "name": "腾讯",
+            "URL": "https://urlsec.qq.com/check.html",
+            "text": "安全检查",
+            "ico": ""
+        },
+        {
+            "name": "百度",
+            "URL": "https://bsb.baidu.com/",
+            "text": "安全中心",
+            "ico": ""
+        },
+        {
+            "name": "安全联盟",
+            "URL": " https://www.anquan.org/site_appeal/search/",
+            "text": "安全联盟",
+            "ico": ""
+        },
+        {
+            "name": "权重",
+            "URL": " https://www.aizhan.com/",
+            "text": "网站权重查询",
+            "ico": ""
+        }
+       
+       
+    ]
+    
+    
+    ,
     "游戏": [{
             "name": "yuzu",
             "URL": "https://yuzu-emu.org/downloads/",

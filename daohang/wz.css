@@ -251,3 +251,13 @@ background-color: darkcyan;
     display:none;
 
 } */
+
+
+.main-add{
+
+    display: flex;
+    position:fixed;
+    bottom:0; 
+    top:auto; 
+    z-index:99999; 
+}

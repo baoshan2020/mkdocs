@@ -15,36 +15,41 @@
 
 <body>
 
-<div class="main">
-    <div class="main-left">
-        <div class="main-left-tail" onclick="fresh();">主页</div>
+    <div class="main">
+        <div class="main-left">
+            <div class="main-left-tail" onclick="fresh();">主页</div>
 
-    </div>
-    <div class="seach">
-        <div>
-            <input class="seachSelectActive" type="button" value="baidu"  onclick="seachSelect(this)">
-            <input class="seach-select" type="button" value="sougou"  onclick="seachSelect(this)">
-            <input class="seach-select" type="button" value="dali"  onclick="seachSelect(this)">
-            <form  class="seachFrom" action="https://www.baidu.com/" target="_blank">
-               
-                <div align="center">
-                    <input  name=tn type=hidden value=baidu>
+        </div>
+        <div class="seach">
+            <div>
+                <input class="seachSelectActive" type="button" value="baidu" onclick="seachSelect(this)">
+                <input class="seach-select" type="button" value="sougou" onclick="seachSelect(this)">
+                <input class="seach-select" type="button" value="dali" onclick="seachSelect(this)">
+                <form class="seachFrom" action="https://www.baidu.com/" target="_blank">
 
-                    <a href="http://www.baidu.com/">
-                        <!-- <img src="http://img.baidu.com/search/img/baidulogo_clarity_80_29.gif" alt="Baidu" align="bottom" border="0">  -->
+                    <div align="center">
+                        <input name=tn type=hidden value=baidu>
+
+                        <a href="http://www.baidu.com/">
+                            <!-- <img src="http://img.baidu.com/search/img/baidulogo_clarity_80_29.gif" alt="Baidu" align="bottom" border="0">  -->
                         </a>
-                    <input class="seach-input" type=text name=word size=40>
-                    <input class="seach-button" type="submit" value="搜索">
-                </div>
+                        <input class="seach-input" type=text name=word size=40>
+                        <input class="seach-button" type="submit" value="搜索">
+                    </div>
+            </div>
         </div>
-    </div>
-    <div class="main-content">
+        <div class="main-content">
 
-        <div id="content">
+            <div id="content">
 
+
+            </div>
+        </div>
+        <div class="main-add">
+<span> 网站名称</span><input type="text" > <span> URL</span> <input type="text" > <span> 备注</span><input type="text" ><span><a>上传ico</a></span><input type="button" value="添加">
 
         </div>
-    </div>
+
     </div>
 
 
