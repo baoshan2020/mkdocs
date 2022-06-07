@@ -162,6 +162,14 @@
 
 
     ],
+    "PC":[ {
+        "name": "联想系统安装",
+        "URL": "http://iknow.lenovo.com.cn/detail/dc_177365.html",
+        "text": "电脑",
+        "ico": ""
+    }],
+
+    
     "网络": [{
             "name": "网络安全",
             "URL": "http://www.gjwlaqxcz.cn/",
@@ -174,12 +182,7 @@
             "text": "111",
             "ico": ""
         },
-        {
-            "name": "导航链接",
-            "URL": "",
-            "text": "参考",
-            "ico": ""
-        },
+      
         {
             "name": "proxmox",
             "URL": "https://www.proxmox.com/",
@@ -228,8 +231,29 @@
 
 
     ],
-        "网站": [
+        "web": [
+
+            {
+                "name": "element",
+                "URL": "  https://element.eleme.cn/",
+                "text": "web学习 vue 插件 ",
+                "ico": ""
+            },
             
+            {
+                "name": "jq2.0.3",
+                "URL": "  https://study.miaov.com/",
+                "text": "web学习 代码分析 ",
+                "ico": ""
+            },
+           
+            
+            {
+                "name": "jqure代码分析",
+                "URL": " https://www.bilibili.com/video/BV1Jv411H7Te?p=1",
+                "text": "web学习 ",
+                "ico": ""
+            },
             {
                 "name": "node学习",
                 "URL": " http://nodejs.cn/",

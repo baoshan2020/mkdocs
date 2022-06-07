@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>练习03</title>
+      <style type="text/css">
+         input{
+              width: 150px;
+              height: 80px;
+             border-radius: 10px;
+             font-size: 24px;
+             padding: 10px;
+             background: green;
+             outline: none;
+         }
+     </style>
+ </head>
+ <body>
+     <input type="button" value="按钮A" onclick="countA()">
+     <input type="button" value="按钮B" onclick="countB()">
+     <input type="button" value="按钮C" onclick="countC()">
+     <script>
+     //方案1 大于两个时候比较繁琐
+         var counter=0;
+         var counter2=0; 
+         function count1(){ //1、全局变量适合做返回所有按钮的总点击数，否则用全局变量的话每一个按钮要多一个函数，用闭包就很方便
+             counter+=1;
+             alert('您共点击了我'+counter+'次')
+         }
+         function count2(){
+             counter2+=1;
+            alert('您共点击了我'+counter2+'次')
+         }
+     //方案2
+     function count() {
+         var counter = 0;         function increment() {
+             counter += 1; //2、闭包实现原理：这个匿名函数用了外面函数的变量，外面函数的变量被常驻内存，有几个匿名函数，匿名函数中用的的这个变量就有多少个在内存，
+             alert('您共点击了我'+counter+'次');
+         }
+         return increment
+     }
+    var countA=count();
+        var countB=count()
+   var countC=count()
+
+
+// 48     // function count() {
+// 49     //     var counter = 0;
+// 50     //     (function () {
+// 51     //         return(function(){
+// 52     //             counter += 1;
+// 53     //             alert('您共点击了我'+counter+'次');
+// 54     //         }
+// 55     //         )()
+// 56     //     })()
+// 57     // }
+     </script>
+ </body>
+ </html>
