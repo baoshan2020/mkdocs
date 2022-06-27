@@ -310,7 +310,18 @@
         }
 
     ]
+    ,
+    "下载": [{
+            "name": "vmware",
+            "URL": "https://developer.aliyun.com/article/636965#slide-2",
+            "text": "客户端不同版本",
+            "ico": ""
+        }
 
+    ]
+
+
+    
 
 
 }

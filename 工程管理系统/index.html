@@ -635,6 +635,8 @@ order by a.FatherID,OrgID</p>
 <p>--流程状态</p>
 <p>--CASE WHEN d.ApproveState=1 THEN ''审批通过'' WHEN d.ApproveState=2 THEN ''审批拒绝'' WHEN d.ApproveState=3 THEN ''审批中''  WHEN d.ApproveState=4 THEN ''待审批''  ELSE ''待提交'' END ApproveStateName</p>
 <p>update ProjectEX set ApproveState=1 where  ProjectCode='PBJ200091'</p>
+<p>更新审批意见</p>
+<p>update PRJ_ApproveInfo set Explain='代签项目，毛利率3.78%' where AutoID=23341</p>
 <h2 id="2022428">2022年4月28日执行</h2>
 <p>--PBJ200093\PBJ200091\PBJ200074\PBJ200073\PBJ200072
 declare @p varchar(100) 
