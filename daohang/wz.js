@@ -12,7 +12,7 @@ function init() {
     //移动端访问删除seach
     seachRemove();
     //设置活动标签
-    tab(1);
+    // tab(1);
     actiiveTab();
 }
 
@@ -364,7 +364,12 @@ if(a){
 
 
 function actiiveTab(){
-    // tab(1);
+
+
+
+    setTimeout(tab(1),1000);
+
+   
 
     // // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
     // // var li = ul.getElementsByTagName('li');
