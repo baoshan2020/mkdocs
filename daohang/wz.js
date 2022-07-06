@@ -4,7 +4,7 @@
 window.onload = function () {
 
     init();
-    tab(1);
+
 
 }
 
@@ -308,6 +308,7 @@ function tab(param) {
 
 
 }
+tab('1');
 
 // 随机生成一个背景颜色
 function background() {
