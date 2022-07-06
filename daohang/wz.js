@@ -4,6 +4,7 @@
 window.onload = function () {
 
     init();
+    tab(1);
 
 }
 
@@ -13,7 +14,7 @@ function init() {
     seachRemove();
     //设置活动标签
     // tab(1);
-    actiiveTab();
+    // actiiveTab();
 }
 
 
@@ -140,7 +141,7 @@ function content(jsoncountent) {
         var ul = document.createElement('ul');
         //插入LI
         var li = ''
-       
+
         for (var i = 0; i < dalei.length; i++) {
             /*
             
@@ -157,15 +158,15 @@ function content(jsoncountent) {
             
             */
 
-// //添加活动标签
-// if(i==1){
-//    // li='<li list="1" onclick="tab(1)" class="liactive">连接</li>';
-//     li = "<li list=" + [i] + ' '+ 'class="liactive"'+' ' + "onclick= tab(" + [i] + ") >" + dalei[i] + "</li>";
-//     alert(li);
-//      }
-// else {
+            // //添加活动标签
+            // if(i==1){
+            //    // li='<li list="1" onclick="tab(1)" class="liactive">连接</li>';
+            //     li = "<li list=" + [i] + ' '+ 'class="liactive"'+' ' + "onclick= tab(" + [i] + ") >" + dalei[i] + "</li>";
+            //     alert(li);
+            //      }
+            // else {
             li = "<li list=" + [i] + ' ' + "onclick= tab(" + [i] + ") >" + dalei[i] + "</li>";
-        // }
+            // }
             // l(li);
             ul.innerHTML += li;
         }
@@ -228,155 +229,156 @@ function content(jsoncountent) {
                 if (URL[j].ico) {
 
                     // <div class=ico style="background-image:url(./img/sougou.png)"></div>
-                    ico = '<span class=ico style="' + 'background-image:url(./img/' + URL[j].ico + ')"></span>'; }
-         else {
-                        //   截取ico第一个汉字
-                        var hanzi=URL[j].name.slice(0,1);
-                        //小写转换为大写你     
-                        hanzi=hanzi.toUpperCase();
+                    ico = '<span class=ico style="' + 'background-image:url(./img/' + URL[j].ico + ')"></span>';
+                }
+                else {
+                    //   截取ico第一个汉字
+                    var hanzi = URL[j].name.slice(0, 1);
+                    //小写转换为大写你     
+                    hanzi = hanzi.toUpperCase();
                     //    background-color 随机 background-color: #555555width:56px;height:56px; line-height:56px;
-                    var bg=background();
-                        var ico = '<span  class=ico-hanzi style="color: #fff;'+ bg+ '">' + hanzi + '</span>';
-
-                    }
-                    // l(ico);
-                    // 添加备注text表述
-var text='';
-// text =URL[j].text;
-if(URL[j].text){
-    var text='<p class=atext>'+URL[j].text+'</p>';
-}
-
-                    var a = "<div class='content-wz' list=" + listsub + "><a  target='blank' href=" + URL[j].URL + "> " + ico + URL[j].name +text+ " </a> </div> ";
-                    // l(a);
-                    content.innerHTML += a;
+                    var bg = background();
+                    var ico = '<span  class=ico-hanzi style="color: #fff;' + bg + '">' + hanzi + '</span>';
 
                 }
+                // l(ico);
+                // 添加备注text表述
+                var text = '';
+                // text =URL[j].text;
+                if (URL[j].text) {
+                    var text = '<p class=atext>' + URL[j].text + '</p>';
+                }
+
+                var a = "<div class='content-wz' list=" + listsub + "><a  target='blank' href=" + URL[j].URL + "> " + ico + URL[j].name + text + " </a> </div> ";
+                // l(a);
+                content.innerHTML += a;
 
             }
-        }
-        content();
 
+        }
+    }
+    content();
+
+
+
+}
+
+
+
+//引用
+
+//点击菜单执行函数
+function tab(param) {
+
+    //清空颜色
+    var liclear = document.getElementsByClassName('liactive')[0];
+    // l(liclear);
+    if (liclear) { liclear.className = ''; }
+
+
+    //设置活动更新颜色
+    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
+    var li = ul.getElementsByTagName('li');
+    li[param].className = 'liactive';
+
+    //获取content下的span
+    var aUrl = document.getElementById('content').getElementsByTagName('div');
+
+    //历边list 需要显示还是隐藏
+    for (i = 0; i < aUrl.length; i++) {
+
+        //获取list值
+        var listZhi = aUrl[i].getAttribute('list')
+        //如果list值和param) 大类值相同显示，不等 隐藏
+        if (listZhi == param) {
+            // aUrl[i].className=' content-wz aactive'
+            //显示
+            aUrl[i].style.display = " inline-table";
+
+        } else {
+            // aUrl[i].className='content-wz noaactive'
+            //隐藏
+            aUrl[i].style.display = "none";
+
+        }
 
 
     }
 
 
 
-    //引用
-
-    //点击菜单执行函数
-    function tab(param) {
-
-        //清空颜色
-        var liclear = document.getElementsByClassName('liactive')[0];
-        // l(liclear);
-        if (liclear) { liclear.className = ''; }
-
-
-        //设置活动更新颜色
-        var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-        var li = ul.getElementsByTagName('li');
-        li[param].className = 'liactive';
-
-        //获取content下的span
-        var aUrl = document.getElementById('content').getElementsByTagName('div');
-
-        //历边list 需要显示还是隐藏
-        for (i = 0; i < aUrl.length; i++) {
-
-            //获取list值
-            var listZhi = aUrl[i].getAttribute('list')
-            //如果list值和param) 大类值相同显示，不等 隐藏
-            if (listZhi == param) {
-                // aUrl[i].className=' content-wz aactive'
-                //显示
-                aUrl[i].style.display = " inline-table";
-
-            } else {
-                // aUrl[i].className='content-wz noaactive'
-                //隐藏
-                aUrl[i].style.display = "none";
-
-            }
-
-
-        }
-
-
-
-    }
+}
 
 // 随机生成一个背景颜色
-    function background(){
-        // 随机数
-        var a='';
-         a=Math.ceil(Math.random()*5);
+function background() {
+    // 随机数
+    var a = '';
+    a = Math.ceil(Math.random() * 5);
     //   l(a);
-  
-      var bg= ['background-color: #555555;','background-color: #555555;','background-color: #ffcc33;','background-color: #cc0000;','background-color: #0066cc;','background-color: goldenrod;'];
-      l(bg[a]);
-return bg[a];
-    }
 
-    function fresh(){            
-        // 框架内页面刷新：可实现局部刷新与整个页面重定向
-                    self.location.reload();  //刷新框架内页面
-                   // window.parent.location.href='http://koushuling.top'; //页面重定向 
-              }
+    var bg = ['background-color: #555555;', 'background-color: #555555;', 'background-color: #ffcc33;', 'background-color: #cc0000;', 'background-color: #0066cc;', 'background-color: goldenrod;'];
+    l(bg[a]);
+    return bg[a];
+}
+
+function fresh() {
+    // 框架内页面刷新：可实现局部刷新与整个页面重定向
+    self.location.reload();  //刷新框架内页面
+    // window.parent.location.href='http://koushuling.top'; //页面重定向 
+}
 
 
 //移动端删除seach
-function seachRemove(){
+function seachRemove() {
 
-    
-var a=isMobile();
-if(a){
-    var seach=document.getElementsByClassName('seach')[0];
-    seach.remove();
-}
+
+    var a = isMobile();
+    if (a) {
+        var seach = document.getElementsByClassName('seach')[0];
+        seach.remove();
+    }
 }
 
 //判定是PC还是移动端
-              function isMobile(){
-                if(window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
-                 return true; // 移动端
-                }else{
-                 return false; // PC端
-                }
-               }
+function isMobile() {
+    if (window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
+        return true; // 移动端
+    } else {
+        return false; // PC端
+    }
+}
 
-        
+
 // seachSelect 颜色变更和内容变更
-               function seachSelect(a){
-                   //清空活动样式
-        
-                document.getElementsByClassName('seachSelectActive')[0].className='seach-select';
-                // 设置活动样式
-        a.className ='seachSelectActive';
-   
-     if(a.value=='sougou'){document.getElementsByClassName('seachFrom')[0].action='http://q.sogou.com/';}
-     if(a.value=='baidu'){document.getElementsByClassName('seachFrom')[0].action='http://www.baidu.com';}
-     if(a.value=='dali'){document.getElementsByClassName('seachFrom')[0].action='https://www.dalipan.com';}
+function seachSelect(a) {
+    //清空活动样式
+
+    document.getElementsByClassName('seachSelectActive')[0].className = 'seach-select';
+    // 设置活动样式
+    a.className = 'seachSelectActive';
+
+    if (a.value == 'sougou') { document.getElementsByClassName('seachFrom')[0].action = 'http://q.sogou.com/'; }
+    if (a.value == 'baidu') { document.getElementsByClassName('seachFrom')[0].action = 'http://www.baidu.com'; }
+    if (a.value == 'dali') { document.getElementsByClassName('seachFrom')[0].action = 'https://www.dalipan.com'; }
 
 
-               }
+}
 
 
-function actiiveTab(){
+function actiiveTab() {
 
 
-alert(1);
-  tab(1);
+    alert(1);
+    tab(1);
     alert(2);
 
-   
+
 
     // // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
     // // var li = ul.getElementsByTagName('li');
     // 
     // $(ul>li)[1].className=liactive;
-    
-    
+
+
     // li[1].className = 'liactive';
 }
