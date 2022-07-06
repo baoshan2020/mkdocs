@@ -268,7 +268,7 @@ function content(jsoncountent) {
 
 //点击菜单执行函数
 function tab(param) {
-var param=param;
+// var param=param;
     // l(param);
     //清空颜色
     var liclear = document.getElementsByClassName('liactive')[0];
@@ -277,9 +277,9 @@ var param=param;
 
 
     //设置活动更新颜色
-    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-    var li = ul.getElementsByTagName('li');
-
+    // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
+    // var li = ul.getElementsByTagName('li');
+const li=document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
    // Cannot read properties of undefined (reading 'getElementsByTagName')
    // 缺少 document. 前缀
 alert(li);
