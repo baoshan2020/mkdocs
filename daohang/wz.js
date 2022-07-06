@@ -363,9 +363,13 @@ if(a){
 
 
 function actiiveTab(){
-    tab(1);
+    // tab(1);
 
-    // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-    // var li = ul.getElementsByTagName('li');
+    // // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
+    // // var li = ul.getElementsByTagName('li');
+    // 
+    $(ul>li)[1].className=liactive;
+    
+    
     // li[1].className = 'liactive';
 }
