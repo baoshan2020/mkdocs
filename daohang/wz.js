@@ -12,6 +12,7 @@ function init() {
     //移动端访问删除seach
     seachRemove();
     //设置活动标签
+    tab(1);
     actiiveTab();
 }
 
@@ -368,7 +369,7 @@ function actiiveTab(){
     // // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
     // // var li = ul.getElementsByTagName('li');
     // 
-    $(ul>li)[1].className=liactive;
+    // $(ul>li)[1].className=liactive;
     
     
     // li[1].className = 'liactive';
