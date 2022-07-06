@@ -367,7 +367,7 @@ function actiiveTab(){
 
 
 
-    setTimeout(tab(1),1000);
+    setTimeout(tab(1),3000);
 
    
 
