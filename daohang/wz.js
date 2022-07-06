@@ -277,8 +277,11 @@ function tab(param) {
 
 
     //设置活动更新颜色
-    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-    var li = ul.getElementsByTagName('li');
+    // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
+    // var li = ul.getElementsByTagName('li');
+
+var li = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
+
     li[param].className = 'liactive';
 
     //获取content下的span
