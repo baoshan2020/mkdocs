@@ -277,10 +277,11 @@ function tab(param) {
 
 
     //设置活动更新颜色
-    // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-    //  var li = ul.getElementsByTagName('li');
-     var li=document.getElementsByTagName('li');
+    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
+     var li = ul.document.getElementsByTagName('li');
+    //  var li=document.getElementsByTagName('li');
    // Cannot read properties of undefined (reading 'getElementsByTagName')
+   // 缺少 document. 前缀
 
 
 
