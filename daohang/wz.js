@@ -289,7 +289,7 @@ function tab(param) {
 // document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[param].className = 'liactive';
     // li[param].className = 'liactive';
     // var a=ul[0].childNodes;
-     var a = ul[0].getElementsByTagName('li');
+     var a = ul[0].getElementsByTagName("li");
     alert(a);
     //获取content下的span
     var aUrl = document.getElementById('content').getElementsByTagName('div');
