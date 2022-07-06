@@ -280,7 +280,7 @@ function tab(param) {
     // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
     // var li = ul.getElementsByTagName('li');
 
-// var li = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
+var li = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
 
     li[param].className = 'liactive';
 
