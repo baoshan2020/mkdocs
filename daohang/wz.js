@@ -308,7 +308,7 @@ function tab(param) {
 
 
 }
-tab('1');
+// tab('1');
 
 // 随机生成一个背景颜色
 function background() {
@@ -318,7 +318,7 @@ function background() {
     //   l(a);
 
     var bg = ['background-color: #555555;', 'background-color: #555555;', 'background-color: #ffcc33;', 'background-color: #cc0000;', 'background-color: #0066cc;', 'background-color: goldenrod;'];
-    l(bg[a]);
+    // l(bg[a]);
     return bg[a];
 }
 
@@ -369,9 +369,9 @@ function seachSelect(a) {
 function actiiveTab() {
 
 
-    alert(1);
-    tab(1);
-    alert(2);
+    // alert(1);
+    // tab(1);
+    // alert(2);
 
 
 
