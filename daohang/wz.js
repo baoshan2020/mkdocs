@@ -269,7 +269,7 @@ function content(jsoncountent) {
 //点击菜单执行函数
 function tab(param) {
 
-    l(param);
+    // l(param);
     //清空颜色
     var liclear = document.getElementsByClassName('liactive')[0];
     // l(liclear);
@@ -277,8 +277,8 @@ function tab(param) {
 
 
     //设置活动更新颜色
-    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName(ul)[0];
-     var li = ul.getElementsByTagName(li);
+    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName("ul")[0];
+     var li = ul.getElementsByTagName("li");
    // Cannot read properties of undefined (reading 'getElementsByTagName')
    //错误是 getElementsByTagName('li'); li 不应该有单引号
 // var li = document.getElementsByClassName('main-left')[0].getElementsByTagName(ul)[0].getElementsByTagName(li);
@@ -373,7 +373,7 @@ function seachSelect(a) {
 function actiiveTab() {
 
 
-    alert(1);
+    // alert(1);
     tab(1);
     alert(2);
 
