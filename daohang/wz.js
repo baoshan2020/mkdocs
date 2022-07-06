@@ -366,8 +366,9 @@ if(a){
 function actiiveTab(){
 
 
-
-    setTimeout(tab(1),3000);
+alert(1);
+    setTimeout(tab(1),1000);
+    alert(2);
 
    
 
