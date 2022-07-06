@@ -13,8 +13,7 @@ function init() {
     //移动端访问删除seach
     seachRemove();
     //设置活动标签
-    // tab(1);
-    // actiiveTab();
+    actiiveTab();
 }
 
 
@@ -270,6 +269,7 @@ function content(jsoncountent) {
 //点击菜单执行函数
 function tab(param) {
 
+    li(param);
     //清空颜色
     var liclear = document.getElementsByClassName('liactive')[0];
     // l(liclear);
@@ -369,9 +369,9 @@ function seachSelect(a) {
 function actiiveTab() {
 
 
-    // alert(1);
-    // tab(1);
-    // alert(2);
+    alert(1);
+    tab(1);
+    alert(2);
 
 
 
