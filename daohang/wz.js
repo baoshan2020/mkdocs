@@ -363,8 +363,9 @@ if(a){
 
 
 function actiiveTab(){
+    tab(1);
 
-    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-    var li = ul.getElementsByTagName('li');
-    li[1].className = 'liactive';
+    // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
+    // var li = ul.getElementsByTagName('li');
+    // li[1].className = 'liactive';
 }
