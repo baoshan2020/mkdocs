@@ -286,7 +286,7 @@ function tab(param) {
 // alert(li[param]);
 
 
-document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[param].className = 'liactive';
+// document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[param].className = 'liactive';
     // li[param].className = 'liactive';
     var a=ul.childNodes;
     alert(a);
