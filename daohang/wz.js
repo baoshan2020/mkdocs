@@ -11,6 +11,8 @@ function init() {
     loadDoc();
     //移动端访问删除seach
     seachRemove();
+    //设置活动标签
+    actiiveTab();
 }
 
 
@@ -137,6 +139,7 @@ function content(jsoncountent) {
         var ul = document.createElement('ul');
         //插入LI
         var li = ''
+       
         for (var i = 0; i < dalei.length; i++) {
             /*
             
@@ -152,13 +155,23 @@ function content(jsoncountent) {
             document.getElementsByClassName('main-left')[0].appendChild(ul);
             
             */
+
+// //添加活动标签
+// if(i==1){
+//    // li='<li list="1" onclick="tab(1)" class="liactive">连接</li>';
+//     li = "<li list=" + [i] + ' '+ 'class="liactive"'+' ' + "onclick= tab(" + [i] + ") >" + dalei[i] + "</li>";
+//     alert(li);
+//      }
+// else {
             li = "<li list=" + [i] + ' ' + "onclick= tab(" + [i] + ") >" + dalei[i] + "</li>";
+        // }
             // l(li);
             ul.innerHTML += li;
         }
 
         //把ul插入到指定的div里
         document.getElementsByClassName('main-left')[0].appendChild(ul);
+        // $('')
     }
     //执行
     tail();
@@ -347,3 +360,11 @@ if(a){
 
 
                }
+
+
+function actiiveTab(){
+
+    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0]
+    var li = ul.getElementsByTagName('li');
+    li[1].className = 'liactive';
+}
