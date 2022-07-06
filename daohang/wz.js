@@ -277,11 +277,11 @@ function tab(param) {
 
 
     //设置活动更新颜色
-    // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-    // var li = ul.getElementsByTagName('li');
+    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName(ul)[0];
+     var li = ul.getElementsByTagName(li);
    // Cannot read properties of undefined (reading 'getElementsByTagName')
    //错误是 getElementsByTagName('li'); li 不应该有单引号
-var li = document.getElementsByClassName('main-left')[0].getElementsByTagName(ul)[0].getElementsByTagName(li);
+// var li = document.getElementsByClassName('main-left')[0].getElementsByTagName(ul)[0].getElementsByTagName(li);
 
     li[param].className = 'liactive';
 
