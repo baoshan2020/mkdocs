@@ -277,7 +277,7 @@ function tab(param) {
 
 
     //设置活动更新颜色
-    // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
+    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
     // var li = ul.getElementsByTagName('li');
 // const li=document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
    // Cannot read properties of undefined (reading 'getElementsByTagName')
@@ -288,7 +288,8 @@ function tab(param) {
 
 document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[param].className = 'liactive';
     // li[param].className = 'liactive';
-
+    var a=ul.childNodes;
+    alert(a);
     //获取content下的span
     var aUrl = document.getElementById('content').getElementsByTagName('div');
 
