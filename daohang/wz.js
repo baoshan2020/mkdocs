@@ -269,7 +269,7 @@ function content(jsoncountent) {
 //点击菜单执行函数
 function tab(param) {
 
-    li(param);
+    l(param);
     //清空颜色
     var liclear = document.getElementsByClassName('liactive')[0];
     // l(liclear);
