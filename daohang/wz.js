@@ -274,7 +274,7 @@ if(URL[j].text){
 
 
         //设置活动更新颜色
-        var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0]
+        var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
         var li = ul.getElementsByTagName('li');
         li[param].className = 'liactive';
 
@@ -364,7 +364,7 @@ if(a){
 
 function actiiveTab(){
 
-    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0]
+    var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
     var li = ul.getElementsByTagName('li');
     li[1].className = 'liactive';
 }
