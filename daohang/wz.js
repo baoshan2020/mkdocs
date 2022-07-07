@@ -12,8 +12,7 @@ function init() {
     loadDoc();
     //移动端访问删除seach
     seachRemove();
-    //设置活动标签
-    actiiveTab();
+ 
 }
 
 
@@ -225,7 +224,7 @@ function content(jsoncountent) {
             for (j = 0; j < URL.length; j++) {
                 // l(URL[j].name)
                 // l(URL[j].URL)
-                console.log(URL[j].ico);
+                // console.log(URL[j].ico);
                 if (URL[j].ico) {
 
                     // <div class=ico style="background-image:url(./img/sougou.png)"></div>
@@ -258,6 +257,8 @@ function content(jsoncountent) {
         }
     }
     content();
+
+    //默认执行第一个菜单连接，后续要改成排行榜
     tab(1);
 
 
@@ -281,13 +282,6 @@ function tab(param) {
     //设置活动更新颜色
     var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
     var li = ul.getElementsByTagName('li');
-// const li=document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
-   // Cannot read properties of undefined (reading 'getElementsByTagName')
-   // 缺少 document. 前缀
-// alert(li);
-// alert(li[param]);
-
-
 // document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[param].className = 'liactive';
     li[param].className = 'liactive';
     // var a=ul[0].childNodes;
@@ -378,20 +372,3 @@ function seachSelect(a) {
 }
 
 
-function actiiveTab() {
-
-
-    // alert(1);
-    // tab(1);
-    // alert(2);
-
-
-
-    // // var ul = document.getElementsByClassName('main-left')[0].getElementsByTagName('ul')[0];
-    // // var li = ul.getElementsByTagName('li');
-    // 
-    // $(ul>li)[1].className=liactive;
-
-
-    // li[1].className = 'liactive';
-}
