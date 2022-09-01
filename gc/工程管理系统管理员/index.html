@@ -15,7 +15,7 @@
     
     
       
-        <title>管理员手册 - 启迪清能IT</title>
+        <title>价格查询 - 启迪清能IT</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              管理员手册
+              价格查询
             
           </span>
         </div>
@@ -336,14 +336,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -366,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%91%98%E5%B7%A5%E6%89%8B%E5%86%8C/" class="md-nav__link">
+      <a href="../../OA/%E5%91%98%E5%B7%A5%E6%89%8B%E5%86%8C/" class="md-nav__link">
         员工手册
       </a>
     </li>
@@ -378,55 +376,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          管理员手册
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../OA/%E7%AE%A1%E7%90%86%E5%91%98%E6%89%8B%E5%86%8C/" class="md-nav__link">
         管理员手册
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、用户、部门管理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、关联企业微信
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -472,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gc/员工手册杨剑锋.md" class="md-nav__link">
+      <a href="../员工手册杨剑锋.md" class="md-nav__link">
         None
       </a>
     </li>
@@ -652,28 +606,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、用户、部门管理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、关联企业微信
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -687,29 +621,78 @@
                 
 
 
-  <h1>管理员手册</h1>
-
-<h4 id="_1">一、用户、部门管理</h4>
-<p>1.添加用户</p>
-<p>菜单-&gt;系统管理-&gt;用户管理</p>
-<p><img alt="img" src="../../img/ao%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png" /></p>
-<p>要求:</p>
-<ul>
-<li>用户编号是6位（PS 312前3位代表公司  ，后3位是序号）</li>
-<li>登录账号：如果遇到重名请用手机号码登录</li>
-<li>如果是部门领导： 请在是否领导：是  担任职务：部长</li>
-<li>初始化密码：每次手动改成Aa1122</li>
-</ul>
-<p>2.兼职添加</p>
-<p><img alt="img" src="../../img/oa%E6%B7%BB%E5%8A%A0%E5%85%BC%E8%81%8C.png" /></p>
-<p>3.部门&amp;分管领导管理</p>
-<p>菜单-&gt;系统管理-&gt;组织管理</p>
-<p>如果副总有多个需要修改如下图</p>
-<p><img alt="img" src="../../img/oa%E5%88%86%E7%AE%A1%E9%A2%86%E5%AF%BC.png" /></p>
-<h4 id="_2">二、关联企业微信</h4>
-<p>登录https://work.weixin.qq.com 用微信扫一扫</p>
-<p><img alt="img" src="../../img/oa%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1.png" /></p>
-<p><img alt="img" src="../../img/oa%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A12.png" /></p>
+<h1 id="_1">价格查询</h1>
+<p>select * from dbo.ModelPriceList --物料价格 成本价</p>
+<p>select * from dbo.AgencyModelPriceList  --代理价格</p>
+<h1 id="_2">角色表格</h1>
+<p>Roles</p>
+<p>user  IsSytem=1是 管理员</p>
+<p>​             IsLock=1  不允许登录系统</p>
+<p>select * from Users where ValidDateEnd&lt;GETDATE() and IsLock=0 </p>
+<p>update Users  set IsLock=1 where ValidDateEnd&lt;GETDATE() and IsLock=0 </p>
+<p>select * from Users where ValidDateEnd&gt;GETDATE() and IsLock=0</p>
+<h1 id="_3">审批流程表 （配置）</h1>
+<p>ApproveOrder</p>
+<h2 id="_4">审批流程查询</h2>
+<p>select a.AutoID,a.Kind,f.ItemName,a.DutyID,b.DutyName,a.OrderCode,a.IsPermit,a.DeptCode,c.DeptName,a.ProjectStyleCode,a.ExtendKind,a.ApproveExplain,a.SysDateTime
+ from dbo.ApproveOrder a
+left join DutyInfo b on a.DutyID=b.DutyCode
+left join FixItem f on a.Kind=f.ItemCode 
+left join deptinfo c on c.deptcode=a.deptcode
+--where a.Kind='YLCS_5' and a.DeptCode is null
+ order by ItemName,Kind,DeptCode,ExtendKind,OrderCode</p>
+<p>流程插入语句</p>
+<p>INSERT INTO [EduPlatform_QHGC].[dbo].[ApproveOrder20210413] ([Kind] ,[DutyID] ,[OrderCode] ,[IsPermit] ,[DeptCode] ,[ProjectStyleCode],[ExtendKind],[SysDateTime]) VALUES('YLCS_6','QHYG0A020','1','0',NULL,NULL,NULL,GETDATE())</p>
+<h2 id="-">--岗位查询</h2>
+<p>select a.DutyName ,a.DutyCode,b.UserName,
+b.ValidDateEnd , case when b.ValidDateEnd &lt;= '2021-4-12' then '否' else '是' end
+from DutyInfo  a
+left join Users b on  a.DutyCode= b.DutyID or right(b.DutyID,9)=a.DutyCode or
+left (b.DutyID,9)=a.DutyCode 
+where b.UserName&lt;&gt;'' --and b.UserName='孙萍'
+order by DutyName,ValidDateEnd</p>
+<p>负责人修改</p>
+<p>update  a
+set a.XMJLHRCODE='00000180',XMJLNAME='曹宇辰',Memo=isnull(a.Memo,'')+'原负责人'+XMJLHRCODE+'离职变更'
+from PRJ_NormalInfo a
+inner join ProjectEX b on a.ProjectCode=b.ProjectCode and a.CurrState=b.CurrState
+where XMJLHRCODE in ( select Code  from Users where UserName in('李亚楠','王英杰','何前玉','于鹏','刘立新'))
+and a.IsValid='1'</p>
+<h1 id="_5">项目信息</h1>
+<h2 id="_6">导出项目信息</h2>
+<p>select a.ProjectCode,a.ProjectName,a.DeptCode,b.DeptName,a.OrgID,c.OrgName,a.Region,d.RegionName,c.FatherID,e.RegionName, 
+case when b.ACTIVE_FLAG=1 then '有效' else '无效' end as deptState,a.InputDate
+ from Project a
+inner join DeptInfo b on a.DeptCode=b.DeptCode
+left join OrgInfo c on c.OrgID=a.OrgID
+left join Region d on d.RegionCode=a.Region
+left join Region e on e.RegionCode=c.FatherID
+where a.IsValid='1'</p>
+<h2 id="_7">导出部门信息</h2>
+<p>select a.DeptCode,a.DeptName,case when a.ACTIVE_FLAG=1 then '有效' else '无效' end deptstate,a.FatherDeptCode,b.DeptName from DeptInfo a
+left join DeptInfo b on a.FatherDeptCode=b.DeptCode
+order by a.DeptGrade</p>
+<h2 id="_8">导出地区信息</h2>
+<p>select a.FatherID,b.RegionName,a.OrgID,a.OrgName , case when a.IsAvailable='1' then '有效' else '无效'  end orgstate from OrgInfo a
+inner join Region b on a.FatherID=b.RegionCode
+order by a.FatherID,OrgID</p>
+<p>根据部门添加流程</p>
+<p><img alt="1650243337494" src="../../img/1650243337494.png" /></p>
+<h2 id="_9">删除审批流程</h2>
+<p>---State=1 审批通过</p>
+<p>update  dbo.PRJ_ApproveInfo set State=1 where  ProjectCode='PBJ200091' and AutoID=21480</p>
+<p>--流程状态</p>
+<p>--CASE WHEN d.ApproveState=1 THEN ''审批通过'' WHEN d.ApproveState=2 THEN ''审批拒绝'' WHEN d.ApproveState=3 THEN ''审批中''  WHEN d.ApproveState=4 THEN ''待审批''  ELSE ''待提交'' END ApproveStateName</p>
+<p>update ProjectEX set ApproveState=1 where  ProjectCode='PBJ200091'</p>
+<p>更新审批意见</p>
+<p>update PRJ_ApproveInfo set Explain='代签项目，毛利率3.78%' where AutoID=23341</p>
+<h2 id="2022428">2022年4月28日执行</h2>
+<p>--PBJ200093\PBJ200091\PBJ200074\PBJ200073\PBJ200072
+declare @p varchar(100) 
+set  @p='PBJ200072'
+select * from dbo.PRJ_ApproveInfo where  ProjectCode=@p  and State=3</p>
+<p>update  dbo.PRJ_ApproveInfo set State=1 where  ProjectCode=@p and State=3
+update ProjectEX set ApproveState=1 where  ProjectCode=@p</p>
 
 
 
@@ -723,42 +706,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../%E5%91%98%E5%B7%A5%E6%89%8B%E5%86%8C/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 员工手册" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              员工手册
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../%E9%82%AE%E7%AE%B1/263/" class="md-footer__link md-footer__link--next" aria-label="Next: 邮箱" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              邮箱
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
