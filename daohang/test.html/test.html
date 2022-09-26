@@ -1,0 +1,219 @@
+<Script>
+  function jz() {
+    spxx2();
+    $('#hdata').attr('autocomplete', 'off');
+    //设置hdata  autocomplete off 不会出现提示信息 
+
+    $('#hdata').datetimepicker({
+      timepicker: false,
+      format: 'Y-m-d',
+    });
+
+    $.datetimepicker.setLocale('zh');
+  }
+
+  function dayin() {
+    var stxt = document.getElementById("MainContent").innerHTML;
+    var ss = window.open();
+    ss.document.write(stxt);
+    ss.window.focus();
+    ss.window.print();
+    ss.document.execCommand("Refresh");
+  }
+
+
+  //修改打印函数
+
+  function spxx2() //函数名字无所谓，在表单打开事件调用
+  {
+    divspxx.innerHTML = ApproveIdeaList(pubdjbh); //div9是空div的id   
+    //在表单下边加个空的div,宽度自己设置，高度设为空，然后这个div审批意见就能自动增高了
+
+  }
+
+  function ApproveIdeaList(Mkey) {
+
+
+    if (Mkey != undefined && Mkey != "")
+
+    {
+
+      var strSql = "select top 1 App_ID from JHOA_Approve where App_fatherID = 0 and AppO_Values = '" + Mkey + "'";
+
+      var AppID = SqlToField(strSql);
+
+
+      if (AppID == null || AppID == "")
+        return "";
+
+
+
+
+      var table =
+        '<TABLE width=100% style="BORDER-COLLAPSE: collapse;" cellSpacing="0" cellPadding="0" border=1 frame="box">';
+
+      table +=
+        "<tr><td style='text-align:center' width='15%'><strong>办理步骤</strong></td><td style='text-align:center' width='10%'><strong>办理人</strong></td><td style='text-align:center' width='35%'><strong>办理意见</strong></td><td style='text-align:center' width='15%'><strong>签名</strong><td style='text-align:center' width='15%'><strong>办理日期</strong></td></tr>";
+
+
+      sql = "exec Pt_AppInstanceSelectNew_App '" + AppID + "',''";
+
+
+      //alert(sql);
+
+      var xmlResult = SelectSql(sql, 1, -1);
+
+      var oXml = SetDom(xmlResult);
+      if (oXml.documentElement) {
+
+        if (oXml.documentElement.childNodes.length > 0) {
+
+          for (var i = 0; i < oXml.documentElement.childNodes.length - 1; i++) {
+
+            table += "<TR height='30px'>";
+
+            table += "<TD align=center>" + NavJs.textContent(oXml.documentElement.childNodes[i].childNodes[7]) +
+              "</TD>";
+
+            table += "<TD align=center>" + NavJs.textContent(oXml.documentElement.childNodes[i].childNodes[16]) +
+              "</TD>";
+
+            table += "<TD align=center>" + NavJs.textContent(oXml.documentElement.childNodes[i].childNodes[8]) +
+              "</TD>";
+
+            table += "<TD align=center>" + (NavJs.textContent(oXml.documentElement.childNodes[i].childNodes[0]) != "" ?
+              "<img src='../../../getPic.aspx?BIZID=" + NavJs.textContent(oXml.documentElement.childNodes[i]
+                .childNodes[17]) + "' width='30px' height='30px'/>" : "") + "</TD>";
+
+            table += "<TD align=center>" + NavJs.textContent(oXml.documentElement.childNodes[i].childNodes[18]) +
+              "</TD>";
+
+            table += "</TR>";
+
+          }
+
+        }
+
+      }
+
+      table += "</TABLE>";
+
+      return table;
+
+    } else
+
+    {
+
+      return "";
+
+    }
+
+  }
+  //单据选择
+
+  function GetFrom() {
+    var URL =
+      "../../fceform/common/djframe.htm?djsn=5626fpkjxd_1a4c0fe1-4581-4b36-9e16-5464b62f47e5&djtype=TT&DjName=5626发票开具选单";
+    //window.showModalDialog(URL,'','DialogLeft:170px;DialogTop:130px;DialogWidth:700px;DialogHeight:500px;status:no;help:no');
+    openModalDialog(URL, window, {
+      width: 1100,
+      height: 600
+    }, null, []);
+
+  }
+
+  function callback(RtrValue) {
+    if (Trim(RtrValue) != "") {
+      document.getElementById("text5").value = RtrValue.split(",")[1]; //test8是值放的地方
+      if (Trim(RtrValue.split(",")[1]) != "") {
+        document.getElementById("text5").disabled = true;
+      }
+    } else {
+      document.getElementById("text5").disabled = false;
+    }
+    top.Dialog.Close();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  function GetFrom() {
+    var URL =
+      "../../fceform/common/djframe.htm?djsn=5626fpkjxd_1a4c0fe1-4581-4b36-9e16-5464b62f47e5&djtype=TT&DjName=5626发票开具选单";
+    //window.showModalDialog(URL,'','DialogLeft:170px;DialogTop:130px;DialogWidth:700px;DialogHeight:500px;status:no;help:no');
+    openModalDialog(URL, window, {
+      width: 1100,
+      height: 600
+    }, null, []);
+
+  }
+
+  function callback(RtrValue) {
+    if (Trim(RtrValue) != "") {
+      document.getElementById("text5").value = RtrValue.split(",")[1]; //test8是值放的地方
+      document.getElementById("text4").value = RtrValue.split(",")[2]; //test8是值放的地方
+      document.getElementById("textarea6").value = RtrValue.split(",")[3]; //test8是值放的地方
+      document.getElementById("textarea5").value = RtrValue.split(",")[4]; //test8是值放的地方
+      document.getElementById("text3").value = RtrValue.split(",")[5]; //test8是值放的地方
+      document.getElementById("text2").value = RtrValue.split(",")[6]; //test8是值放的地方
+      document.getElementById("textarea4").value = RtrValue.split(",")[7]; //test8是值放的地方
+      document.getElementById("textarea3").value = RtrValue.split(",")[8]; //test8是值放的地方
+      document.getElementById("textarea1").value = RtrValue.split(",")[9]; //test8是值放的地方
+
+
+      /*
+      if (Trim(RtrValue.split(",")[1]) != "") {
+      document.getElementById("text5").disabled = true;
+      }
+      } else {
+      document.getElementById("text5").disabled = false;
+      */
+    }
+
+    top.Dialog.Close();
+  }
+
+
+  document.getElementById()
+
+
+
+  function updateHtbh() {
+    var mainid = text8.value;
+    var htbh = text0.value;
+    sql = "update tusenergy129zibiao  set  htbh='" + htbh + "' where MainID=='" + mainid + "'";
+    //SelectSql(sql,1,-1);
+    al(sql)
+
+  }
+
+
+  function neiqin() {
+    var id = sys_getDeptID();
+     
+    //var id=text6.value
+    var sql = "select DeptParentID from Department where DeptID= '" +id+ "'"
+    var parentId = SqlToField(sql);
+    // 2232 分布式事业部  2233分布式事业部
+    if parentId == "1904" {
+      neiqin = "薛佳凝";
+    }
+    else if parentId == "" {
+      neiqin = "杨晓晔";
+    }
+    else {
+      neiqin = "";
+    }
+    alert(neiqin);
+    // text2.vlaue = neiqin;
+
+  }
+</script>
