@@ -40,13 +40,46 @@
 </div><div class="gr">
     <a href="http://book.thsolar.com/productmanual/gr/index.html"><img src="./gr.png"></a>
 </div>
-<button id="screen" onclick="screen()" >横屏</button>
+<button id="screen" onclick="init()" >横屏</button>
 <script>
-    function screen(){
+    function hengscreen(){
         var bodyEle = document.body;
         bodyEle.style.width="100%"
         bodyEle.style.height="100%"
 }
+
+
+function shuscreen(){
+        var bodyEle = document.body;
+        bodyEle.style.width="100%"
+        bodyEle.style.height="100%"
+}
+
+function init(){
+    hsppanding()
+}
+function hsppanding(){
+window.addEventListener("orientationchange", toOrientation);
+    function toOrientation() {
+      let box = document.querySelector("#box");
+      if (window.orientation == 90 || window.orientation == -90) {
+        // 横屏-显示提示
+        // box.style.display = "flex";
+        alert("竖屏")
+        hengscreen();
+      } else {
+        alert("横屏")
+        shuscreen();
+        // 横屏-隐藏提示
+        // box.style.display = "none";
+      }
+    }
+}
+
+
+init();
+
+
 </script>
 </body>
 </html>
