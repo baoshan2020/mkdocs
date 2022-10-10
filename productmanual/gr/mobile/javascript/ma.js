@@ -29,8 +29,9 @@ function remvoeshengyin() {
 
           //添加返回首页
     var fbtopbar=document.getElementById('fbTopBar')
+    // style="margin-top: 10px;"
 
-    var div='<div style="margin-top: 10px;"><a href="http://book.thsolar.com/productmanual/index.html"><img style="width: 25px;" src="./zhuye.png" alt=""></a></div>'
+    var div='<div ><a href="http://book.thsolar.com/productmanual/index.html"><img style="width: 25px;" src="./zhuye.png" alt=""></a></div>'
 
     fbtopbar.innerHTML+=div;
 
