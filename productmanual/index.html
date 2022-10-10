@@ -42,38 +42,38 @@
 </div>
 <button id="screen" onclick="init()" >横屏</button>
 <script>
-    function hengscreen(){
+
+function hengscreen(){
         var bodyEle = document.body;
         bodyEle.style.width="100%"
         bodyEle.style.height="100%"
 }
 
-
 function shuscreen(){
-        var bodyEle = document.body;
-        bodyEle.style.width="100%"
-        bodyEle.style.height="100%"
+    var bodyEle = document.body;
+    bodyEle.style.width="100%"
+    bodyEle.style.height="100%"
 }
 
 function init(){
-    hsppanding()
+hsppanding()
 }
 function hsppanding(){
 window.addEventListener("orientationchange", toOrientation);
-    function toOrientation() {
-      let box = document.querySelector("#box");
-      if (window.orientation == 90 || window.orientation == -90) {
-        // 横屏-显示提示
-        // box.style.display = "flex";
-        alert("横屏")
-        hengscreen();
-      } else {
-        alert("竖屏")
-        shuscreen();
-        // 横屏-隐藏提示
-        // box.style.display = "none";
-      }
-    }
+function toOrientation() {
+  let box = document.querySelector("#box");
+  if (window.orientation == 90 || window.orientation == -90) {
+    // 横屏-显示提示
+    // box.style.display = "flex";
+    alert("横屏")
+    hengscreen();
+  } else {
+    alert("竖屏")
+    shuscreen();
+    // 横屏-隐藏提示
+    // box.style.display = "none";
+  }
+}
 }
 
 
