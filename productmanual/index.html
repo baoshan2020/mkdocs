@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>华业阳光</title>
 </head>
 <style>
     body{
@@ -16,8 +16,8 @@
         height: 100%;
     }
     div{
-        width: 60%;
-        height: 60%;
+        width: 70%;
+        height: 70%;
         margin: 0 auto;
         text-align: center;
         background-color:rgb(222, 223, 226);
@@ -32,6 +32,7 @@
     }
 </style>
 <body >
+ <!-- <div></div> -->
     <!-- <img src="./diye.png"> -->
     <div class="rb">
 
@@ -40,41 +41,72 @@
 </div><div class="gr">
     <a href="http://book.thsolar.com/productmanual/gr/index.html"><img src="./gr.png"></a>
 </div>
-<button id="screen" onclick="init()" >横屏</button>
+<!-- <button id="screen" onclick="init()" >横屏</button> -->
 <script>
-
+console.log(1);
 function hengscreen(){
+    console.log(2);
         var bodyEle = document.body;
-        bodyEle.style.width="100%"
-        bodyEle.style.height="100%"
+        bodyEle.style.width="90%"
+        bodyEle.style.height="90%"
+        
 }
 
 function shuscreen(){
+    console.log(3);
     var bodyEle = document.body;
     bodyEle.style.width="100%"
     bodyEle.style.height="100%"
+    var div=document.getElementsByTagName('div');
+        div[0].style.width='80%';
+        div[0].style.height='80%';
+        div[0].style.margin='150px auto';
+        div[1].style.width='80%';
+        div[1].style.height='80%';
+        // div[1].style.margin='80px auto';
+        // div[2].style.width='80%';
+        // div[2].style.height='80%';
+
 }
 
 function init(){
-hsppanding()
+    console.log('init');
+if(IsPhone()){
+    console.log('IsPhone');
+    hsppanding();
+}
 }
 function hsppanding(){
+
+    console.log('hsppanding');
 window.addEventListener("orientationchange", toOrientation);
 function toOrientation() {
   let box = document.querySelector("#box");
   if (window.orientation == 90 || window.orientation == -90) {
     // 横屏-显示提示
     // box.style.display = "flex";
-    alert("横屏")
+    // alert("横屏")
+    console.log('hengping');
     hengscreen();
+    
   } else {
-    alert("竖屏")
+    // alert("竖屏")
     shuscreen();
-    // 横屏-隐藏提示
+    console.log('shuping');
     // box.style.display = "none";
   }
 }
 }
+
+
+//判定是否是手机
+function IsPhone(){
+    var info=navigator.userAgent;
+    var IsPhone=/mobile/i.test(info);
+    // alert(IsPhone);
+    return IsPhone
+}
+
 
 
 init();
