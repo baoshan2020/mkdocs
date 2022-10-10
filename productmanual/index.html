@@ -16,9 +16,9 @@
         height: 100%;
     }
     div{
-        width: 70%;
+        /* width: 70%;
         height: 70%;
-        margin: 0 auto;
+        margin: 0 auto; */
         text-align: center;
         background-color:rgb(222, 223, 226);
         border-radius: 50px ;
@@ -49,6 +49,16 @@ function hengscreen(){
         var bodyEle = document.body;
         bodyEle.style.width="90%"
         bodyEle.style.height="90%"
+
+        var bodyEle = document.body;
+    bodyEle.style.width="100%"
+    bodyEle.style.height="100%"
+    var div=document.getElementsByTagName('div');
+        div[0].style.width='80%';
+        div[0].style.height='80%';
+        div[0].style.margin='50px auto';
+        div[1].style.width='80%';
+        div[1].style.height='80%';
         
 }
 
@@ -69,11 +79,35 @@ function shuscreen(){
 
 }
 
+
+
+function pc(){
+    console.log("pc");
+    var bodyEle = document.body;
+    bodyEle.style.width="100%"
+    bodyEle.style.height="100%"
+    var div=document.getElementsByTagName('div');
+        div[0].style.width='70%';
+        div[0].style.height='70%';
+        div[0].style.margin='150px auto';
+        div[1].style.width='70%';
+        div[1].style.height='70%';
+        div[1].style.margin='150px auto';
+}
+
+
+
+
 function init(){
-    console.log('init');
+    // console.log('init');
+
+// 如果是手机，切换到手机横竖屏模式，其他切换到电脑模式
 if(IsPhone()){
     console.log('IsPhone');
     hsppanding();
+}
+else{
+    pc();
 }
 }
 function hsppanding(){
