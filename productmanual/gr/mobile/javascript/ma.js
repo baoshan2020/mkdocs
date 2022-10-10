@@ -27,14 +27,27 @@ function remvoeshengyin() {
 
     function addHome(){
 
-          //添加返回首页
-    var fbtopbar=document.getElementById('fbTopBar').firstChild;
-    // style="margin-top: 10px;"
 
-    var div='<div><a href="http://book.thsolar.com/productmanual/index.html"><img style="width: 25px;" src="./zhuye.png" alt=""></a></div>'
 
-    fbtopbar.innerHTML=div;
 
+          //电脑
+    var fbtopbarPC=document.getElementById('fbTopBar');
+    if(fbtopbarPC!=null ){
+        var div='<div class="home" style="margin-top: 10px; margin-left:5px "><a href="http://book.thsolar.com/productmanual/index.html"><img style="width: 25px;" src="./zhuye.png" alt=""></a></div>'
+        fbtopbarPC.innerHTML+=div    
+}
+//手机
+    var fbtopbarPhone=document.getElementsByClassName('phoneTopBar');
+    if(fbtopbarPhone!=null){
+        var div='<div class="home" style="margin-top: 6px; margin-left:5px "><a href="http://book.thsolar.com/productmanual/index.html"><img style="width: 25px;" src="./zhuye.png" alt=""></a></div>'
+
+        fbtopbarPhone[0].innerHTML+=div    
+}
+
+ 
+    //手机显示菜单不同
+
+   // style="margin-top: 10px;"
     }
 setTimeout("remvoeshengyin()",1000)
 setTimeout("addHome()",1000)
